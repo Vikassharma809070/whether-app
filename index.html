@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' };
+    </script>
 </head>
-<body>
-    <h1>this is Whether app</h1>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-300">
+    <div class="flex flex-col items-center min-h-screen p-4">
+        <!-- Digital Clock -->
+        <div class="text-2xl font-bold mb-4" id="clock"></div>
+
+        <!-- Toggle Dark Mode -->
+        <button id="toggleDarkMode" class="mb-4 px-4 py-2 bg-gray-700 text-white rounded">Dark Mode</button>
+
+        <!-- Weather Search Box -->
+        <div class="flex gap-2">
+            <input type="text" id="cityInput" placeholder="Enter city name" 
+                   class="p-2 rounded border border-gray-300 dark:bg-gray-800 dark:border-gray-600">
+            <button onclick="getWeather()" 
+                    class="p-2 bg-blue-500 text-white rounded">Search</button>
+        </div>
+
+        <!-- Auto Detect Weather -->
+        <button onclick="getWeatherByLocation()" 
+                class="mt-2 px-4 py-2 bg-green-500 text-white rounded">Use My Location</button>
+
+        <!-- Weather Display -->
+        <div id="weatherResult" class="mt-6 p-4 bg-white dark:bg-gray-800 rounded shadow-md w-full max-w-md text-center"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
