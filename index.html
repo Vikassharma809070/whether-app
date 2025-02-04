@@ -42,6 +42,57 @@
         <div id="forecastResult" class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"></div>
     </div>
 
+
     <script src="script.js"></script>
+<!-- /// -->
+<!-- <div class="flex flex-col items-center min-h-screen p-4">
+    <div class="mb-4">
+        <h2 class="text-xl font-bold">Register</h2>
+        <input id="regName" placeholder="Name" class="input">
+        <input id="regEmail" placeholder="Email" class="input">
+        <input id="regPassword" type="password" placeholder="Password" class="input">
+        <input id="regConfirmPassword" type="password" placeholder="Confirm Password" class="input">
+        <input id="regCity" placeholder="City" class="input">
+        <button onclick="register()" class="btn">Register</button>
+    </div>
+    <div class="mt-6">
+        <h2 class="text-xl font-bold">Login</h2>
+        <input id="loginEmail" placeholder="Email" class="input">
+        <input id="loginPassword" type="password" placeholder="Password" class="input">
+        <button onclick="login()" class="btn">Login</button>
+    </div>
+</div>
+    
+    <script>
+
+async function register() {
+    const user = {
+        name: document.getElementById("regName").value,
+        email: document.getElementById("regEmail").value,
+        password: document.getElementById("regPassword").value,
+        confirmPassword: document.getElementById("regConfirmPassword").value,
+        city: document.getElementById("regCity").value,
+        date: new Date().toISOString().split("T")[0]
+    };
+    await fetch("http://localhost:5000/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user)
+    });
+}
+
+async function login() {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+    const response = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+    });
+    const data = await response.json();
+    localStorage.setItem("token", data.token);
+}
+</script>
+    </script> -->
 </body>
 </html>

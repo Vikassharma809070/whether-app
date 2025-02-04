@@ -1,96 +1,98 @@
-🌦️ Weather App
+Weather Application with Authentication
 
-A weather application built with HTML, CSS, and JavaScript. This app allows users to:
+Overview
 
-✅ Search for weather by city name 🌍
-✅ Automatically get weather using geolocation 📍
-✅ Toggle between light mode and dark mode 🌙
-✅ View a real-time digital clock 🕒
+This is a full-featured weather application that provides hyperlocal forecasts, severe weather alerts, air quality index, UV index, marine and agricultural weather data. The app includes user authentication with name, email, password, city, and date registration, allowing personalized weather insights.
 
-🚀 Features
+Features
 
-Responsive UI with CSS
+Hyperlocal Forecasts: Accurate weather updates for specific neighborhoods.
 
-Dark mode toggle
+Severe Weather Alerts: Real-time notifications for storms, floods, and other hazards.
 
-Fetch weather data via OpenWeatherMap API
+Air Quality Index: Pollution level updates for health precautions.
 
-Geolocation-based weather detection
+UV Index: Ultraviolet radiation levels to prevent skin damage.
 
-Live digital clock
+Marine Weather Data: Wind speed, wave height, and tidal currents.
 
-📂 Folder Structure
+Agricultural Weather Data: Optimized weather-based planning for farmers.
 
-/weather-app
-│──── styles.css
-│────script.js
-│── index.html
-│── README.md
+Long-range Forecasts: Future climate trends for preparedness.
 
-🛠️ Installation & Setup
+Personalized Recommendations: Activity suggestions based on weather conditions.
 
-1️⃣ Clone the repository
+Integration with Smart Devices: Connects with home automation and travel apps.
+
+Multilingual Support: Supports English, Tamil, Telugu, Bhojpuri, and Maithili.
+
+Responsive UI: Designed for all screen sizes with an eye-catching interface.
+
+Tech Stack
+
+Frontend
+
+HTML, CSS, JavaScript
+
+Tailwind CSS for styling
+
+Responsive and interactive UI components
+
+Backend
+
+Node.js with Express.js
+
+MongoDB for user authentication data
+
+bcrypt.js for password encryption
+
+JSON Web Tokens (JWT) for secure authentication
+
+Installation
+
+Clone the repository:
 
 git clone https://github.com/vikassharma809070/weather-app.git
 cd weather-app
 
-2️⃣ Set up OpenWeatherMap API Key
+Install dependencies:
 
-Create an account on OpenWeatherMap
+npm install
 
-Get your API key from API Keys
+Set up environment variables:
+Create a .env file in the root directory and add:
 
-Update script.js:
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 
-const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY"; // Replace with your key
+Run the backend server:
 
-3️⃣ Open index.html
+npm start
 
-Simply open the index.html file in a browser to use the app. 🚀
+The server will start on http://localhost:5000
 
-🎨 Screenshots
+API Endpoints
 
-🌞 Light Mode
+Authentication
 
+POST /register - Registers a new user
 
+POST /login - Logs in an existing user
 
-🌙 Dark Mode
+Weather Data
 
+GET /weather?city={city_name}&pincode={pincode} - Fetches weather details for a given location
 
+Future Enhancements
 
-🔧 Technologies Used
+AI-powered weather insights
 
-HTML - Structure of the app
+Crowdsourced real-time weather updates
 
-CSS - Styling and responsiveness
+Gamification for increased user engagement
 
-JavaScript - Logic and API handling
+License
 
-OpenWeatherMap API - Fetch real-time weather data
+This project is licensed under the MIT License.
 
-Geolocation API - Auto-detect user location
-
-🛠️ Future Enhancements
-
-✅ Hourly & 7-day weather forecast ⏳
-
-✅ Improved UI with animations 🎨
-
-✅ Save favorite cities ⭐
-
-🤝 Contributing
-
-Feel free to fork this project and submit a pull request. 🚀
-
-📜 License
-
-This project is licensed under the MIT License. 📝
-
-📧 Contact
-
-Have questions? Reach out:
-
-GitHub: vikassharma809070
-
-Email: vikassharma809070@gmail.com
-
+Made with ❤️ by Vikas Sharma
