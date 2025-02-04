@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Enhanced Weather App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { darkMode: 'class' };
     </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-300">
     <div class="flex flex-col items-center min-h-screen p-4">
-        <!-- Digital Clock -->
         <div class="text-2xl font-bold mb-4" id="clock"></div>
 
-        <!-- Toggle Dark Mode -->
         <button id="toggleDarkMode" class="mb-4 px-4 py-2 bg-gray-700 text-white rounded">Dark Mode</button>
 
-        <!-- Weather Search Box -->
         <div class="flex gap-2">
-            <input type="text" id="cityInput" placeholder="Enter city name" 
-                   class="p-2 rounded border border-gray-300 dark:bg-gray-800 dark:border-gray-600">
-            <button onclick="getWeather()" 
-                    class="p-2 bg-blue-500 text-white rounded">Search</button>
+            <input type="text" id="locationInput" placeholder="Enter city or pincode" class="p-2 rounded border border-gray-300 dark:bg-gray-800 dark:border-gray-600">
+            <button onclick="getWeather()" class="p-2 bg-blue-500 text-white rounded">Search</button>
+        </div>
+        <button onclick="getWeatherByLocation()" class="mt-2 px-4 py-2 bg-green-500 text-white rounded">Use My Location</button>
+
+        <div class="mt-4">
+            <label for="languageSelect" class="mr-2">Language:</label>
+            <select id="languageSelect" class="p-2 border rounded">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="hi">हिंदी</option>
+                <option value="zh">中文</option>
+                <option value="ta">தமிழ்</option>
+                <option value="te">తెలుగు</option>
+                <option value="bho">भोजपुरी</option>
+                <option value="mai">मैथिली</option>
+            </select>
         </div>
 
-        <!-- Auto Detect Weather -->
-        <button onclick="getWeatherByLocation()" 
-                class="mt-2 px-4 py-2 bg-green-500 text-white rounded">Use My Location</button>
-
-        <!-- Weather Display -->
         <div id="weatherResult" class="mt-6 p-4 bg-white dark:bg-gray-800 rounded shadow-md w-full max-w-md text-center"></div>
+        <div id="forecastResult" class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"></div>
     </div>
 
     <script src="script.js"></script>
